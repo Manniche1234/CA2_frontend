@@ -14,6 +14,8 @@ import AdminManger from "./AdminManager";
 import GetCatFacts from "./GetCatFacts";
 import GetIp from "./GetIp";
 import GetBTCPrice from "./GetBTCPrice";
+import GetNbaPlayer from "./Nba_players"
+import User from "./User";
 
 
 export default function Nesting(props) {
@@ -36,7 +38,13 @@ export default function Nesting(props) {
             <Route path="/btcprice">
               <GetBTCPrice />
             </Route>
-        
+            <Route path="/nba_players">
+              <GetNbaPlayer/>
+            </Route>
+            <Route path="/seeUser">
+              <User/>
+            </Route>
+          
             {userrole === "admin" && (
               <Route path="/admin">
                 <AdminManger />
@@ -78,7 +86,17 @@ const Header = (props) => {
           BTC Price
         </NavLink>
       </li>
-      
+      <li>
+        <NavLink activeClassName="selected" to="/nba_players">
+          Nba Players
+        </NavLink>
+      </li>
+      <li>
+      <NavLink activeClassName="selected" to="/seeUser">
+          See your players
+        </NavLink>
+      </li>
+
       {userrole === "admin" && (
         <li>
           <NavLink activeClassName="selected" to="/topics">
