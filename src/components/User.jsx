@@ -11,7 +11,7 @@ const User = () => {
     useEffect(()=>{
         setDataisLoaded(false)
         const options = facade.makeOptions("GET",true);
-        fetch(backEndApi + "/api/user/getuser", options)
+        fetch(dropletURL + "/api/user/getuser", options)
         .then((res) => res.json())
         .then((json) => {
             setUser(json);

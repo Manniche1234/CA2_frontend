@@ -27,7 +27,7 @@ const GetNbaPlayer = () => {
     
     const addPlayerToUser = (first_name,last_name) =>{
       const options = facade.makeOptions("POST",true, {first_name,last_name});
-      fetch(backEndApi + "/api/user/addplayer", options)
+      fetch(dropletURL + "/api/user/addplayer", options)
         .then((res) => res.text())
         .then((text) =>{
             setResponseFromBackEnd(text);

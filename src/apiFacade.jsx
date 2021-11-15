@@ -1,5 +1,5 @@
 import jwt_decode from "jwt-decode";
-import { Server_URL } from "./components/Urls";
+import { Server_URL, dropletURL } from "./components/Urls";
 function handleHttpErrors(res) {
   if (!res.ok) {
     return Promise.reject({ status: res.status, fullError: res.json() });
@@ -33,7 +33,7 @@ function apiFacade() {
       username: user,
       password: password,
     });
-    return fetch(Server_URL + "/api/login", options)
+    return fetch(dropletURL + "/api/login", options)
       .then(handleHttpErrors)
       .then((res) => {
         setToken(res.token);
@@ -42,7 +42,7 @@ function apiFacade() {
 
   const fetchData = async () => {
     const options = makeOptions("GET", true); //True add's the token
-    const res = await fetch(Server_URL + "/api/info/" + decoded.roles, options);
+    const res = await fetch(dropletURL + "/api/info/" + decoded.roles, options);
     return handleHttpErrors(res);
   };
 
