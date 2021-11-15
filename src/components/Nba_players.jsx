@@ -34,17 +34,6 @@ const GetNbaPlayer = () => {
       })
     }
     
-//      const getTables = (nbaplayers) =>{
-//       return <div><ul>{nbaplayers.data.filter().map (el => {
-//         return <li>{el.first_name} {el.last_name}. Played in: {el.team.full_name} <button onClick={() => addPlayerToUser(el.first_name, el.last_name)} >Add player to your roaster</button></li>
-//       })}</ul>
-//       <div>
-//         <input onChange={handleChange} type="text" id="textInput" placeholder="Type player name"></input> 
-//         <button onClick={searchplayer} type="submit">Search</button>
-//         <p>{responseFromBackEnd}</p>
-//        </div>
-//       </div>
-// }
 
     const searchplayer = (evt) =>{
       evt.preventDefault();
@@ -75,12 +64,7 @@ const GetNbaPlayer = () => {
       
       </div>
        
-    //   if (playerList){
-    //     return getTables(nbaplayers);
-    //   }
-
-
-    // return getTables(searchPlayer);
+  
 
        return <div>{searchPlayer.data.map (el => {
         return <li>{el.first_name} {el.last_name}. Played in: {el.team.full_name} <button onClick={() => addPlayerToUser(el.first_name, el.last_name)}>Add player to your roaster</button></li>
